@@ -1,0 +1,270 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftInfo {
+  background-color: #0d98ba;
+
+  width: 20vw;
+  height: 100vh;
+}
+
+.leftContainer {
+  /* background-color: rgb(0, 50, 200); */
+  /* color: white; */
+  width: 80%;
+  height: 90%;
+  padding: 10px;
+  position: relative;
+  left: 6%;
+  top: 4%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.myContact {
+  color: aqua;
+  transition: all 500ms;
+}
+
+.myContact:hover {
+  color: red;
+  font-size: large;
+}
+
+.rightContainer {
+  background-color: #ffff9e;
+  width: 80vw;
+  height: 100vh;
+}
+
+.rightContainerItem {
+  margin: 5%;
+}
+
+.computerSkills {
+  display: flex;
+}
+
+.skillsContainer {
+  display: flex;
+
+  margin-left: 8%;
+}
+
+/* image pop up */
+#myImg {
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#myImg:hover {
+  margin-left: 12%;
+  width: 85%;
+  opacity: 0.7;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.ghost {
+  cursor: pointer;
+  position: absolute;
+  width: 90px;
+  height: 100px;
+  background: rgb(172, 161, 161);
+  border-radius: 70px 70px 0 0;
+  transform: translateY(-10px);
+  animation: float 4s linear infinite;
+
+  top: 50%;
+  right: 20%;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.ghost .face {
+  width: 66.5px;
+  position: absolute;
+  top: 33.25px;
+  left: calc(50% - 33.25px);
+}
+
+.ghost .eyes {
+  height: 13.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 12px;
+}
+
+.ghost .eyes span {
+  width: 13.5px;
+  height: 6.75px;
+  background: #20262a;
+  border-radius: 8px 8px 26px 26px;
+  transition: 0.4s;
+}
+
+.ghost:hover .eyes span {
+  height: 13.5px;
+  border-radius: 50%;
+}
+
+.ghost .mouth {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ghost .mouth span {
+  width: 22px;
+  height: 5px;
+  background: #20262a;
+  border-radius: 0 0 20px 20px;
+  transition: 0.4s;
+}
+
+.ghost:hover .mouth span {
+  height: 11px;
+}
+
+.ghost .hands {
+  width: 118px;
+  position: absolute;
+  left: -14px;
+  top: 42px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ghost .hands span {
+  width: 20px;
+  height: 20px;
+  background: rgb(172, 161, 161);
+  transform: translateY(-2px);
+  animation: shake 4s linear infinite;
+}
+
+@keyframes shake {
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+.ghost .hands span:first-child {
+  border-radius: 12px 0 0 20px;
+}
+
+.ghost .hands span:last-child {
+  border-radius: 0 12px 20px 0;
+  animation-delay: 2s;
+}
+
+.ghost .feet {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: -11px;
+}
+
+.ghost .feet span {
+  flex: 1;
+  height: 12px;
+  background: rgb(172, 161, 161);
+  border-radius: 0 0 20px 20px;
+}
+
+.ghost .feet span:first-child {
+  border-radius: 0 0 12px 20px;
+}
+
+.ghost .feet span:last-child {
+  border-radius: 0 0 20px 12px;
+}
